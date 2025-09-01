@@ -11,6 +11,7 @@ import { Check, X } from 'lucide-react';
 const objects = [
   { 
     id: 'apple',  
+    name: 'Apple',
     position: [0, -1, 0], 
     color: '#ff4444', 
     modelPath: '/models/apple.glb',
@@ -20,6 +21,7 @@ const objects = [
   },
   { 
     id: 'car',  
+    name: 'Toy Car',
     position: [0, -0.2, 0], 
     color: '#4444ff', 
     modelPath: '/models/toy_car.glb',
@@ -29,6 +31,7 @@ const objects = [
   },
   { 
     id: 'house', 
+    name: 'House',
     position: [0, 0, 0], 
     color: '#44ff44', 
     modelPath: '/models/house.glb',
@@ -38,6 +41,7 @@ const objects = [
   },
   { 
     id: 'coffee',  
+    name: 'Coffee',
     position: [0, 0, 0.5], 
     color: '#8B4513', 
     modelPath: '/models/coffee.glb',
@@ -47,6 +51,7 @@ const objects = [
   },
   { 
     id: 'shirt', 
+    name: 'Shirt',
     position: [0, -5, 0], 
     color: '#ff44ff', 
     modelPath: '/models/shirt.glb',

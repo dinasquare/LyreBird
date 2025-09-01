@@ -1053,7 +1053,7 @@ export default function ChatPage() {
                     <CardTitle className="text-sm">Conversation Level</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <Select value={selectedLevel} onValueChange={setSelectedLevel}>
+                    <Select value={selectedLevel} onValueChange={(v) => setSelectedLevel(v as 'beginner' | 'intermediate' | 'advanced')}>
                       <SelectTrigger className="w-full">
                         <SelectValue />
                       </SelectTrigger>

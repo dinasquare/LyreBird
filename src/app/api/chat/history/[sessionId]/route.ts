@@ -5,7 +5,7 @@ import { vectorRAGStore } from '@/lib/vector-rag'
 // GET /api/chat/history/[sessionId] - Get messages for a specific session
 export async function GET(
   request: NextRequest,
-  { params }: { params: { sessionId: string } }
+  {params}: { params: Promise<{ sessionId: string }> }
 ) {
   try {
     const authResult = await auth()
@@ -18,7 +18,7 @@ export async function GET(
       )
     }
 
-    const { sessionId } = params
+    const { sessionId } = await params
     const messages = await vectorRAGStore.getSessionMessages(sessionId, userId)
     const session = await vectorRAGStore.getSession(sessionId, userId)
     
@@ -45,7 +45,7 @@ export async function GET(
 // DELETE /api/chat/history/[sessionId] - Delete a chat session
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { sessionId: string } }
+  {params}: { params: Promise<{ sessionId: string }> }
 ) {
   try {
     const authResult = await auth()
@@ -58,7 +58,7 @@ export async function DELETE(
       )
     }
 
-    const { sessionId } = params
+    const { sessionId } = await params
     await vectorRAGStore.deleteSession(sessionId, userId)
     
     return NextResponse.json({
